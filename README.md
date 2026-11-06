@@ -56,4 +56,4 @@ Secret scanning, push protection, private vulnerability reporting, Dependabot al
 
 ## Contributions and rights
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for maintenance guidance and [SECURITY.md](SECURITY.md) for private reporting. No open-source license is granted by this repository. Third-party resources remain subject to their owners' terms.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for maintenance guidance and [SECURITY.md](SECURITY.md) for private reporting. No open-source license is granted by this repository. This is protected by intellectual property rights.

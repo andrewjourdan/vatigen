@@ -1331,6 +1331,12 @@
     const shelfContainer = document.getElementById("shelf-container");
     const searchInput = document.getElementById("codex-search");
 
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      })[char]);
+    }
+
     function renderShelf() {
       const q = searchInput.value.toLowerCase().trim();
       shelfContainer.innerHTML = "";
@@ -1349,14 +1355,14 @@
         card.className = `codex-card ${c.id === selectedCodex.id ? "selected" : ""}`;
         card.innerHTML = `
           <div class="codex-id">
-            <span>${c.id}</span>
-            <span>${c.category.toUpperCase()}</span>
+            <span>${escapeHTML(c.id)}</span>
+            <span>${escapeHTML(c.category.toUpperCase())}</span>
           </div>
-          <div class="codex-title">${c.title}</div>
-          <div class="codex-meta">${c.origin}</div>
+          <div class="codex-title">${escapeHTML(c.title)}</div>
+          <div class="codex-meta">${escapeHTML(c.origin)}</div>
           <div class="codex-badges">
-            <span class="badge-mini">${c.haplogroup}</span>
-            <span class="badge-mini" style="color: var(--gold-bright); border-color: var(--border-gold);">${c.medium}</span>
+            <span class="badge-mini">${escapeHTML(c.haplogroup)}</span>
+            <span class="badge-mini" style="color: var(--gold-bright); border-color: var(--border-gold);">${escapeHTML(c.medium)}</span>
           </div>
         `;
         card.addEventListener("click", () => {
